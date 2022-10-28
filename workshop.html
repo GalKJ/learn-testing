@@ -36,12 +36,10 @@
 
       function equal(actual, expected) {
         if (actual === expected) {
-          console.info(
-            `Test passed. Result was ${actual} and we expected ${expected}`
-          );
+          console.info(`Pass: Expected ${expected} and received ${actual}`);
         } else {
           console.error(
-            `Test failed! Result was ${actual} and we expected ${expected}`
+            `Fail: Expected ${expected} but received ${actual} instead`
           );
         }
       }
