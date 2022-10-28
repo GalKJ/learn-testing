@@ -30,17 +30,37 @@
 
       // sqTest(4);
 
+      // function square(x) {
+      //   return x * x;
+      // }
+
+      // function equal(actual, expected) {
+      //   if (actual === expected) {
+      //     console.info(`Pass: Expected ${expected} and received ${actual}`);
+      //   } else {
+      //     console.error(
+      //       `Fail: Expected ${expected} but received ${actual} instead`
+      //     );
+      //   }
+      // }
+
+      // const actual1 = square(2);
+      // const expected1 = 4;
+      // equal(actual1, expected1);
+
+      // const actual2 = square(2);
+      // const expected2 = 5;
+      // equal(actual2, expected2);
+
       function square(x) {
         return x * x;
       }
 
-      function equal(actual, expected) {
-        if (actual === expected) {
-          console.info(`Pass: Expected ${expected} and received ${actual}`);
+      function notEqual(actual, expected) {
+        if (actual !== expected) {
+          console.info(`Pass: ${expected} is different to ${actual}`);
         } else {
-          console.error(
-            `Fail: Expected ${expected} but received ${actual} instead`
-          );
+          console.error(`Fail: ${expected} is the same as ${actual}`);
         }
       }
 
