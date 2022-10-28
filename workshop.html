@@ -10,25 +10,49 @@
 
     <script>
       // the function we're testing
+      // function square(x) {
+      //   return x * x;
+      // }
+
+      // function sqTest(n) {
+      //   let result = square(n);
+      //   let expected = n * n;
+
+      //   console.log(result);
+      //   console.log(expected);
+
+      //   if (result !== expected) {
+      //     console.error('your function is broken');
+      //   } else {
+      //     console.log('tests past');
+      //   }
+      // }
+
+      // sqTest(4);
+
       function square(x) {
         return x * x;
       }
 
-      function sqTest(n) {
-        let result = square(n);
-        let expected = n * n;
-
-        console.log(result);
-        console.log(expected);
-
-        if (result !== expected) {
-          console.error('your function is broken');
+      function equal(actual, expected) {
+        if (actual === expected) {
+          console.info(
+            `Test passed. Result was ${actual} and we expected ${expected}`
+          );
         } else {
-          console.log('tests past');
+          console.error(
+            `Test failed! Result was ${actual} and we expected ${expected}`
+          );
         }
       }
 
-      sqTest(4);
+      const actual1 = square(2);
+      const expected1 = 4;
+      equal(actual1, expected1);
+
+      const actual2 = square(2);
+      const expected2 = 5;
+      equal(actual2, expected2);
     </script>
   </body>
 </html>
