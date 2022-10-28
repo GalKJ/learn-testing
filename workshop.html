@@ -52,25 +52,53 @@
       // const expected2 = 5;
       // equal(actual2, expected2);
 
+      // function square(x) {
+      //   return x * x;
+      // }
+
+      // function notEqual(actual, expected) {
+      //   if (actual !== expected) {
+      //     console.info(`Pass: ${expected} is different to ${actual}`);
+      //   } else {
+      //     console.error(`Fail: ${expected} is the same as ${actual}`);
+      //   }
+      // }
+
+      // const result3 = square(3);
+      // const expected3 = 10;
+      // notEqual(result3, expected3);
+
       function square(x) {
         return x * x;
       }
 
-      function notEqual(actual, expected) {
-        if (actual !== expected) {
-          console.info(`Pass: ${expected} is different to ${actual}`);
+      function equal(actual, expected) {
+        if (actual === expected) {
+          console.info(`Pass: Expected ${expected} and received ${actual}`);
         } else {
-          console.error(`Fail: ${expected} is the same as ${actual}`);
+          console.error(
+            `Fail: Expected ${expected} but received ${actual} instead`
+          );
         }
       }
 
-      const actual1 = square(2);
-      const expected1 = 4;
-      equal(actual1, expected1);
+      function test(name, callback) {
+        console.group(name);
+        callback();
+        console.groupEnd(name);
+      }
 
-      const actual2 = square(2);
-      const expected2 = 5;
-      equal(actual2, expected2);
+      test('Correctly squares integers', () => {
+        const result = square(2);
+        const expected = 4;
+        equal(result, expected);
+      });
+
+      test('Correctly squares decimals', () => {
+        const result = square(3.5);
+        const expected = 12.25;
+        equal(result, expected);
+      });
     </script>
   </body>
 </html>
