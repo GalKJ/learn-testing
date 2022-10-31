@@ -91,6 +91,9 @@
       function test(name, callback) {
         console.group(name);
         callback();
+        console.group('Rabbitz');
+        console.log('like carrots');
+        console.groupEnd();
         console.groupEnd(name);
       }
 
