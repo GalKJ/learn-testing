@@ -80,19 +80,21 @@
 
       function equal(actual, expected, message) {
         if (actual === expected) {
-          console.info(`Pass: Expected ${expected} and received ${actual}`);
+          const defaultMessage = `Expected ${expected} and received ${actual}`;
+          console.info('Pass: ' + (message || defaultMessage));
         } else {
-          console.error(
-            `Fail: Expected ${expected} but received ${actual} instead`
-          );
+          const defaultMessage = `Expected ${expected} but received ${actual} instead`;
+          console.error('Fail: ' + (message || defaultMessage));
         }
       }
 
       function notEqual(actual, expected, message) {
         if (actual !== expected) {
-          console.info(`Pass: ${expected} is different to ${actual}`);
+          const defaultMessage = `${expected} is different to ${actual}`;
+          console.info('Pass: ' + (message || defaultMessage));
         } else {
-          console.error(`Fail: ${expected} is the same as ${actual}`);
+          const defaultMessage = `${expected} is the same as ${actual}`;
+          console.error('Fail: ' + (message || defaultMessage));
         }
       }
 
@@ -105,13 +107,13 @@
       test('Correctly squares integers', () => {
         const result = square(2);
         const expected = 4;
-        equal(result, expected);
+        equal(result, expected, 'square(2) should return 4');
       });
 
       test('Correctly squares decimals', () => {
         const result = square(3.5);
-        const expected = 12.25;
-        equal(result, expected);
+        const expected = 666;
+        notEqual(result, expected, 'square(3.5) should not return 666');
       });
     </script>
   </body>
