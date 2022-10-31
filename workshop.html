@@ -78,7 +78,7 @@
         return x * x;
       }
 
-      function equal(actual, expected) {
+      function equal(actual, expected, message) {
         if (actual === expected) {
           console.info(`Pass: Expected ${expected} and received ${actual}`);
         } else {
@@ -88,12 +88,17 @@
         }
       }
 
+      function notEqual(actual, expected, message) {
+        if (actual !== expected) {
+          console.info(`Pass: ${expected} is different to ${actual}`);
+        } else {
+          console.error(`Fail: ${expected} is the same as ${actual}`);
+        }
+      }
+
       function test(name, callback) {
         console.group(name);
         callback();
-        console.group('Rabbitz');
-        console.log('like carrots');
-        console.groupEnd();
         console.groupEnd(name);
       }
 
